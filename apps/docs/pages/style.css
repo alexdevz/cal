@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Cal Sans';
+  font-family: "Cal Sans";
   src: url("https://cal.com/cal.ttf");
 }
 
@@ -9,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Cal Sans';
+  font-family: "Cal Sans";
   font-weight: normal;
   letter-spacing: normal;
 }

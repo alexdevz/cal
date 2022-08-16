@@ -1,7 +1,7 @@
 name: E2E App-Store Apps
 on:
   push:
-    branches: [ feature/event-routing ]
+    branches: [feature/event-routing]
   pull_request_target: # So we can test on forks
     branches:
       - main

@@ -6,15 +6,15 @@
       if (!location.search.includes("nonResponsive")) {
         document.write('<meta name="viewport" content="width=device-width"/>');
       }
-      (()=> {
+      (() => {
         const url = new URL(document.URL);
         // Only run the example specified by only=, avoids distraction and faster to test.
         const only = url.searchParams.get("only");
-        const elementIdentifier = only ? only.replace("ns:",""): null
+        const elementIdentifier = only ? only.replace("ns:", "") : null;
         if (elementIdentifier) {
-          location.hash="#cal-booking-place-" + elementIdentifier + "-iframe"
+          location.hash = "#cal-booking-place-" + elementIdentifier + "-iframe";
         }
-      })()
+      })();
     </script>
     <script>
       (function (C, A, L) {
@@ -73,7 +73,12 @@
     <h3>This page has a non responsive version accessible <a href="?nonResponsive">here</a></h3>
     <h3>Pre-render test page available at <a href="?only=prerender-test">here</a></h3>
     <div>
-      <button data-cal-namespace="prerendertestLightTheme" data-cal-config='{"theme":"light"}' data-cal-link="free?light&popup">Book with Free User[Light Theme]</button>
+      <button
+        data-cal-namespace="prerendertestLightTheme"
+        data-cal-config='{"theme":"light"}'
+        data-cal-link="free?light&popup">
+        Book with Free User[Light Theme]
+      </button>
       <div>
         <i
           >Corresponding Cal Link is being preloaded. Assuming that it would take you some time to click this
@@ -83,17 +88,47 @@
         >
       </div>
       <h2>Other Popup Examples</h2>
-      <button data-cal-namespace="popupAutoTheme" data-cal-link="free">Book with Free User[Auto Theme]</button>
-      <button data-cal-namespace="popupDarkTheme" data-cal-config='{"theme":"dark"}' data-cal-link="free">Book with Free User[Dark Theme]</button>
-      <button data-cal-namespace="popupTeamLinkLightTheme" data-cal-config='{"theme":"light"}' data-cal-link="team/seeded-team/collective-seeded-team-event">Book with Test Team[Light Theme]</button>
-      <button data-cal-namespace="popupTeamLinkDarkTheme" data-cal-config='{"theme":"dark"}' data-cal-link="team/seeded-team/collective-seeded-team-event">Book with Test Team[Dark Theme]</button>
-      <button data-cal-namespace="popupTeamLinksList" data-cal-link="team/seeded-team/">See Team Links [Auto Theme]</button>
-      <button data-cal-namespace="popupPaidEvent" data-cal-link="pro/paid">Book Paid Event [Auto Theme]</button>
-      <button data-cal-namespace="routingFormAuto" data-cal-link="forms/948ae412-d995-4865-875a-48302588de03">Book through Routing Form [Auto Theme]</button>
-      <button data-cal-namespace="routingFormDark" data-cal-config='{"theme":"dark"}' data-cal-link="forms/948ae412-d995-4865-875a-48302588de03">Book through Routing Form [Dark Theme]</button>
+      <button data-cal-namespace="popupAutoTheme" data-cal-link="free">
+        Book with Free User[Auto Theme]
+      </button>
+      <button data-cal-namespace="popupDarkTheme" data-cal-config='{"theme":"dark"}' data-cal-link="free">
+        Book with Free User[Dark Theme]
+      </button>
+      <button
+        data-cal-namespace="popupTeamLinkLightTheme"
+        data-cal-config='{"theme":"light"}'
+        data-cal-link="team/seeded-team/collective-seeded-team-event">
+        Book with Test Team[Light Theme]
+      </button>
+      <button
+        data-cal-namespace="popupTeamLinkDarkTheme"
+        data-cal-config='{"theme":"dark"}'
+        data-cal-link="team/seeded-team/collective-seeded-team-event">
+        Book with Test Team[Dark Theme]
+      </button>
+      <button data-cal-namespace="popupTeamLinksList" data-cal-link="team/seeded-team/">
+        See Team Links [Auto Theme]
+      </button>
+      <button data-cal-namespace="popupPaidEvent" data-cal-link="pro/paid">
+        Book Paid Event [Auto Theme]
+      </button>
+      <button data-cal-namespace="routingFormAuto" data-cal-link="forms/948ae412-d995-4865-875a-48302588de03">
+        Book through Routing Form [Auto Theme]
+      </button>
+      <button
+        data-cal-namespace="routingFormDark"
+        data-cal-config='{"theme":"dark"}'
+        data-cal-link="forms/948ae412-d995-4865-875a-48302588de03">
+        Book through Routing Form [Dark Theme]
+      </button>
       <div>
         <h2>Embed for Pages behind authentication</h2>
-        <button data-cal-namespace="upcomingBookings" data-cal-config='{"theme":"dark"}' data-cal-link="bookings/upcoming">Show Upcoming Bookings</button>
+        <button
+          data-cal-namespace="upcomingBookings"
+          data-cal-config='{"theme":"dark"}'
+          data-cal-link="bookings/upcoming">
+          Show Upcoming Bookings
+        </button>
       </div>
     </div>
     <div id="namespaces-test">
@@ -105,8 +140,8 @@
           <i><a href="?only=ns:default">Test in Zen Mode</a></i>
         </div>
         <i class="last-action"> You would see last Booking page action in my place </i>
-        <div >
-          <div class="place" style="width:50%;"></div>
+        <div>
+          <div class="place" style="width: 50%"></div>
           <div class="loader" id="cal-booking-loader-">Loading .....</div>
         </div>
       </div>
@@ -119,7 +154,10 @@
           <i>You would see last Booking page action in my place</i>
         </i>
         <div class="place">
-          <div>If you render booking embed in me, I won't restrict you. The entire page is yours. Content is by default aligned center</div>
+          <div>
+            If you render booking embed in me, I won't restrict you. The entire page is yours. Content is by
+            default aligned center
+          </div>
           <button
             onclick="(function () {Cal.ns.second('ui', {styles:{eventTypeListItem:{backgroundColor:'blue'}}})})()">
             Change <code>eventTypeListItem</code> bg color
@@ -127,13 +165,12 @@
           <button onclick="(function () {Cal.ns.second('ui', {styles:{body:{background:'red'}}})})()">
             Change <code>body</code> bg color
           </button>
-          <button onclick="(function () {Cal.ns.second('ui', {styles:{align:'left'}})})()">
-            Align left
-          </button>
+          <button onclick="(function () {Cal.ns.second('ui', {styles:{align:'left'}})})()">Align left</button>
           <button onclick="(function () {Cal.ns.second('ui', {styles:{align:'center'}})})()">
             Align Center
           </button>
-          <button onclick="(function () {Cal.ns.second('ui', {styles:{enabledDateButton: {
+          <button
+            onclick="(function () {Cal.ns.second('ui', {styles:{enabledDateButton: {
             backgroundColor: '#D3D3D3',
           },
           disabledDateButton: {
@@ -141,7 +178,7 @@
           },}})})()">
             Change Date Button Color
           </button>
-          
+
           <div class="loader" id="cal-booking-loader-second">Loading .....</div>
         </div>
       </div>
@@ -183,12 +220,9 @@
       <i class="last-action">
         <i>You would see last Booking page action in my place</i>
       </i>
-      <div style="display:flex;align-items: center;">
-        <h2 style="width: 30%">
-          On the right side you can book a team meeting =>
-        </h2>
-        <div style="width: 70%" class="place">
-        </div>
+      <div style="display: flex; align-items: center">
+        <h2 style="width: 30%">On the right side you can book a team meeting =></h2>
+        <div style="width: 70%" class="place"></div>
       </div>
     </div>
     <div class="debug" id="cal-booking-place-inline-routing-form">
@@ -199,12 +233,9 @@
       <i class="last-action">
         <i>You would see last Booking page action in my place</i>
       </i>
-      <div style="display:flex;align-items: center;">
-        <h2 style="width: 30%">
-          On the right side you can book a team meeting =>
-        </h2>
-        <div style="width: 70%" class="place">
-        </div>
+      <div style="display: flex; align-items: center">
+        <h2 style="width: 30%">On the right side you can book a team meeting =></h2>
+        <div style="width: 70%" class="place"></div>
       </div>
     </div>
 
@@ -234,9 +265,9 @@
           elementOrSelector: "#cal-booking-place-default .place",
           calLink: "pro?case=1",
           config: {
-            __autoScroll:true,
+            __autoScroll: true,
             iframeAttrs: {
-              id: "cal-booking-place-default-iframe"
+              id: "cal-booking-place-default-iframe",
             },
             name: "John",
             email: "johndoe@gmail.com",
@@ -258,20 +289,18 @@
         });
 
         // Bulk API is supported - Keep all configuration at one place.
-        Cal.ns.second(
-          [
-            "inline",
-            {
-              elementOrSelector: "#cal-booking-place-second .place",
-              calLink: "pro?case=2",
-              config: {
-                iframeAttrs: {
-                  id: "cal-booking-place-second-iframe"
-                },
-              }
+        Cal.ns.second([
+          "inline",
+          {
+            elementOrSelector: "#cal-booking-place-second .place",
+            calLink: "pro?case=2",
+            config: {
+              iframeAttrs: {
+                id: "cal-booking-place-second-iframe",
+              },
             },
-          ]
-        );
+          },
+        ]);
         Cal.ns.second("on", {
           action: "*",
           callback,
@@ -293,9 +322,9 @@
               calLink: "pro/30min",
               config: {
                 iframeAttrs: {
-                  id: "cal-booking-place-third-iframe"
+                  id: "cal-booking-place-third-iframe",
                 },
-              }
+              },
             },
           ],
           [
@@ -336,9 +365,9 @@
               calLink: "team/seeded-team",
               config: {
                 iframeAttrs: {
-                  id: "cal-booking-place-fourth-iframe"
+                  id: "cal-booking-place-fourth-iframe",
                 },
-              }
+              },
             },
           ],
           [
@@ -370,108 +399,103 @@
           debug: 1,
           origin: "http://localhost:3000",
         });
-        Cal.ns.fifth(
-          [
-            "inline",
-            {
-              elementOrSelector: "#cal-booking-place-fifth .place",
-              calLink: "team/seeded-team/collective-seeded-team-event",
-              config: {
-                iframeAttrs: {
-                  id: "cal-booking-place-fifth-iframe"
-                },
-              }
+        Cal.ns.fifth([
+          "inline",
+          {
+            elementOrSelector: "#cal-booking-place-fifth .place",
+            calLink: "team/seeded-team/collective-seeded-team-event",
+            config: {
+              iframeAttrs: {
+                id: "cal-booking-place-fifth-iframe",
+              },
             },
-          ],
-        );
+          },
+        ]);
         Cal.ns.fifth("on", {
           action: "*",
           callback,
         });
       }
       if (!only || only === "prerender-test") {
-        Cal('init', 'prerendertestLightTheme', {
+        Cal("init", "prerendertestLightTheme", {
           debug: 1,
           origin: "http://localhost:3000",
-        })
+        });
         Cal.ns.prerendertestLightTheme("preload", {
           calLink: "free",
         });
       }
 
       if (!only || only === "inline-routing-form") {
-        Cal('init', 'inline-routing-form', {
+        Cal("init", "inline-routing-form", {
           debug: 1,
           origin: "http://localhost:3000",
-        })
-        Cal.ns['inline-routing-form'](
-          [
-            "inline",
-            {
-              elementOrSelector: "#cal-booking-place-inline-routing-form .place",
-              calLink: "forms/9a7e8801-2f34-45ae-aa79-51859766a860",
-              config: {
-                iframeAttrs: {
-                  id: "cal-booking-place-inline-routing-form-iframe"
-                },
-              }
+        });
+        Cal.ns["inline-routing-form"]([
+          "inline",
+          {
+            elementOrSelector: "#cal-booking-place-inline-routing-form .place",
+            calLink: "forms/9a7e8801-2f34-45ae-aa79-51859766a860",
+            config: {
+              iframeAttrs: {
+                id: "cal-booking-place-inline-routing-form-iframe",
+              },
             },
-          ],
-        );
+          },
+        ]);
       }
 
-      Cal('init', 'popupDarkTheme', {
+      Cal("init", "popupDarkTheme", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
-      Cal('init', 'popupAutoTheme', {
+      });
+      Cal("init", "popupAutoTheme", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
-      Cal('init', 'popupTeamLinkLightTheme', {
+      });
+      Cal("init", "popupTeamLinkLightTheme", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
-      Cal('init', 'popupTeamLinkDarkTheme', {
+      });
+      Cal("init", "popupTeamLinkDarkTheme", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
+      });
 
-      Cal('init', 'popupTeamLinkDarkTheme', {
+      Cal("init", "popupTeamLinkDarkTheme", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
+      });
 
-      Cal('init', 'popupTeamLinksList', {
+      Cal("init", "popupTeamLinksList", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
-      
-      Cal('init', 'popupPaidEvent', {
+      });
+
+      Cal("init", "popupPaidEvent", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
+      });
 
       Cal("init", "floatingButton", {
         debug: 1,
         origin: "http://localhost:3000",
       });
 
-      Cal('init', 'routingFormAuto', {
+      Cal("init", "routingFormAuto", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
-      
-      Cal('init', 'routingFormDark', {
+      });
+
+      Cal("init", "routingFormDark", {
         debug: 1,
         origin: "http://localhost:3000",
-      })
+      });
 
-
-      if (!only  || only == "ns:floatingButton") {
+      if (!only || only == "ns:floatingButton") {
         Cal.ns.floatingButton("floatingButton", {
-          calLink: "pro"
-        })
+          calLink: "pro",
+        });
       }
     </script>
     <script></script>
